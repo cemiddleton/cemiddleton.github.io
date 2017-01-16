@@ -1,0 +1,347 @@
+<html>
+<head>
+ <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["geochart"]});
+      google.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+				var aeiData = new google.visualization.DataTable();
+        aeiData.addColumn('string', 'State');
+        aeiData.addColumn('number', 'Status');
+        aeiData.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+      aeiData.addRows([
+[{v: 'US-AL', f: 'Alabama'},2,'+11% to +20%'],
+[{v: 'US-AK', f: 'Alaska'},1,'+6 to +10%'],
+[{v: 'US-AZ', f: 'Arizona'},0, '-5% to +5%'],
+[{v: 'US-AR', f: 'Arkansas'},1,'+6 to +10%'],
+[{v: 'US-CA', f: 'California'},3,'+20%'],
+[{v: 'US-CO', f: 'Colorado'},0, '-5% to +5%'],
+[{v: 'US-CT', f: 'Connecticut'},3,'+20%'],
+[{v: 'US-DE', f: 'Delaware'},1,'+6 to +10%'],
+[{v: 'US-FL', f: 'Florida'},1,'+6 to +10%'],
+[{v: 'US-GA', f: 'Georgia'},0, '-5% to +5%'],
+[{v: 'US-HI', f: 'Hawaii'},2,'+11% to +20%'],
+[{v: 'US-ID', f: 'Idaho'},0, '-5% to +5%'],
+[{v: 'US-IL', f: 'Illinois'},3,'+20%'],
+[{v: 'US-IN', f: 'Indiana'},0, '-5% to +5%'],
+[{v: 'US-IA', f: 'Iowa'},1,'+6 to +10%'],
+[{v: 'US-KS', f: 'Kansas'},0, '-5% to +5%'],
+[{v: 'US-KY', f: 'Kentucky'},0, '-5% to +5%'],
+[{v: 'US-LA', f: 'Louisiana'},2,'+11% to +20%'],
+[{v: 'US-ME', f: 'Maine'},2,'+11% to +20%'],
+[{v: 'US-MD', f: 'Maryland'},1,'+6 to +10%'],
+[{v: 'US-MA', f: 'Massachussetts'},2,'+11% to +20%'],
+[{v: 'US-MI', f: 'Michigan'},2,'+11% to +20%'],
+[{v: 'US-MN', f: 'Minnesota'},0, '-5% to +5%'],
+[{v: 'US-MS', f: 'Mississippi'},0, '-5% to +5%'],
+[{v: 'US-MO', f: 'Missouri'},1,'+6 to +10%'],
+[{v: 'US-MT', f: 'Montana'},1,'+6 to +10%'],
+[{v: 'US-NE', f: 'Nebraska'},0, '-5% to +5%'],
+[{v: 'US-NV', f: 'Nevada'},2,'+11% to +20%'],
+[{v: 'US-NH', f: 'New Hampshire'},1,'+6 to +10%'],
+[{v: 'US-NJ', f: 'New Jersey'},3,'+20%'],
+[{v: 'US-NM', f: 'New Mexico'},2,'+11% to +20%'],
+[{v: 'US-NY', f: 'New York'},3,'+20%'],
+[{v: 'US-NC', f: 'North Carolina'},0, '-5% to +5%'],
+[{v: 'US-ND', f: 'North Dakota'},1,'+6 to +10%'],
+[{v: 'US-OH', f: 'Ohio'},2,'+11% to +20%'],
+[{v: 'US-OK', f: 'Oklahoma'},1,'+6 to +10%'],
+[{v: 'US-OR', f: 'Oregon'},2,'+11% to +20%'],
+[{v: 'US-PA', f: 'Pennsylvania'},3,'+20%'],
+[{v: 'US-RI', f: 'Rhode Island'},3,'+20%'],
+[{v: 'US-SC', f: 'South Carolina'},0, '-5% to +5%'],
+[{v: 'US-SD', f: 'South Dakota'},0, '-5% to +5%'],
+[{v: 'US-TN', f: 'Tennessee'},0, '-5% to +5%'],
+[{v: 'US-TX', f: 'Texas'},1,'+6 to +10%'],
+[{v: 'US-UT', f: 'Utah'},0, '-5% to +5%'],
+[{v: 'US-VT', f: 'Vermont'},0, '-5% to +5%'],
+[{v: 'US-VA', f: 'Virginia'},-1,'-6% or less'],
+[{v: 'US-WA', f: 'Washington'},0, '-5% to +5%'],
+[{v: 'US-WV', f: 'West Virginia'},0, '-5% to +5%'],
+[{v: 'US-WI', f: 'Wisconsin'},2,'+11% to +20%'],
+
+      ]);
+
+      var aeiOptions = {
+        displayMode: 'regions',
+        resolution:'provinces',
+        width:'500',
+        colorAxis:{
+          colors:['#800000', '#ffffff', '#599b59','#80b380', '#006600'],
+          minValue: -1,
+          maxValue:3},
+       region:'US',
+       tooltip: {isHtml: true},
+       legend: 'none',
+      };
+
+var wageData = new google.visualization.DataTable();
+        wageData.addColumn('string', 'State');
+        wageData.addColumn('number', 'Status');
+        wageData.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+      wageData.addRows([
+
+[{v: 'US-AL', f: 'Alabama'},-10,'-10%'],
+[{v: 'US-AK', f: 'Alaska'},-12,'-12%'],
+[{v: 'US-AZ', f: 'Arizona'},-16,'-16%'],
+[{v: 'US-AR', f: 'Arkansas'},-15,'-15%'],
+[{v: 'US-CA', f: 'California'},-12,'-12%'],
+[{v: 'US-CO', f: 'Colorado'},-12,'-12%'],
+[{v: 'US-CT', f: 'Connecticut'},2,'2%'],
+[{v: 'US-DE', f: 'Delaware'},-19,'-19%'],
+[{v: 'US-FL', f: 'Florida'},-13,'-13%'],
+[{v: 'US-GA', f: 'Georgia'},-18,'-18%'],
+[{v: 'US-HI', f: 'Hawaii'},-4,'-4%'],
+[{v: 'US-ID', f: 'Idaho'},-18,'-18%'],
+[{v: 'US-IL', f: 'Illinois'},-4,'-4%'],
+[{v: 'US-IN', f: 'Indiana'},-18,'-18%'],
+[{v: 'US-IA', f: 'Iowa'},-4,'-4%'],
+[{v: 'US-KS', f: 'Kansas'},-19,'-19%'],
+[{v: 'US-KY', f: 'Kentucky'},-12,'-12%'],
+[{v: 'US-LA', f: 'Louisiana'},-15,'-15%'],
+[{v: 'US-ME', f: 'Maine'},-14,'-14%'],
+[{v: 'US-MD', f: 'Maryland'},-15,'-15%'],
+[{v: 'US-MA', f: 'Massachussetts'},-11,'-11%'],
+[{v: 'US-MI', f: 'Michigan'},-4,'-4%'],
+[{v: 'US-MN', f: 'Minnesota'},-15,'-15%'],
+[{v: 'US-MS', f: 'Mississippi'},-17,'-17%'],
+[{v: 'US-MO', f: 'Missouri'},-14,'-14%'],
+[{v: 'US-MT', f: 'Montana'},-14,'-14%'],
+[{v: 'US-NE', f: 'Nebraska'},-11,'-11%'],
+[{v: 'US-NV', f: 'Nevada'},-1,'-1%'],
+[{v: 'US-NH', f: 'New Hampshire'},-21,'-21%'],
+[{v: 'US-NJ', f: 'New Jersey'},-4,'-4%'],
+[{v: 'US-NM', f: 'New Mexico'},-14,'-14%'],
+[{v: 'US-NY', f: 'New York'},-2,'-2%'],
+[{v: 'US-NC', f: 'North Carolina'},-13,'-13%'],
+[{v: 'US-ND', f: 'North Dakota'},-11,'-11%'],
+[{v: 'US-OH', f: 'Ohio'},-5,'-5%'],
+[{v: 'US-OK', f: 'Oklahoma'},-16,'-16%'],
+[{v: 'US-OR', f: 'Oregon'},-11,'-11%'],
+[{v: 'US-PA', f: 'Pennsylvania'},-5,'-5%'],
+[{v: 'US-RI', f: 'Rhode Island'},0,'0%'],
+[{v: 'US-SC', f: 'South Carolina'},-15,'-15%'],
+[{v: 'US-SD', f: 'South Dakota'},-18,'-18%'],
+[{v: 'US-TN', f: 'Tennessee'},-17,'-17%'],
+[{v: 'US-TX', f: 'Texas'},-18,'-18%'],
+[{v: 'US-UT', f: 'Utah'},-15,'-15%'],
+[{v: 'US-VT', f: 'Vermont'},-17,'-17%'],
+[{v: 'US-VA', f: 'Virginia'},-15,'-15%'],
+[{v: 'US-WA', f: 'Washington'},-15,'-15%'],
+[{v: 'US-WV', f: 'West Virginia'},-17,'-17%'],
+[{v: 'US-WI', f: 'Wisconsin'},-10,'-10%'],
+[{v: 'US-WY', f: 'Wyoming'},-11,'-11%'],
+
+      ]);
+
+      var wageOptions = {
+        displayMode: 'regions',
+        resolution:'provinces',
+        width:'500',
+        colorAxis:{
+          colors:['#800000', 'white', '#006600'],
+          minValue: -21,
+          maxValue:2},
+       region:'US',
+       tooltip: {isHtml: true}
+      };
+
+
+
+var strikeData = new google.visualization.DataTable();
+        strikeData.addColumn('string', 'State');
+        strikeData.addColumn('number', 'Status');
+        strikeData.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+      strikeData.addRows([
+[{v:'US-AL', f: 'Alabama'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-AK', f: 'Alaska'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-AZ', f: 'Arizona'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-AR', f: 'Arkansas'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-CA', f: 'California'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-CO', f: 'Colorado'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>No Statute/Case Law</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-CT', f: 'Connecticut'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-DE', f: 'Delaware'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-FL', f: 'Florida'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-GA', f: 'Georgia'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-HI', f: 'Hawaii'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-ID', f: 'Idaho'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>No Statute/Case Law</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-IL', f: 'Illinois'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-IN', f: 'Indiana'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-IA', f: 'Iowa'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-KS', f: 'Kansas'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-KY', f: 'Kentucky'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-LA', f: 'Louisiana'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-ME', f: 'Maine'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-MD', f: 'Maryland'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-MA', f: 'Massachussetts'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-MI', f: 'Michigan'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-MN', f: 'Minnesota'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-MS', f: 'Mississippi'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-MO', f: 'Missouri'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-MT', f: 'Montana'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-NE', f: 'Nebraska'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-NV', f: 'Nevada'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-NH', f: 'New Hampshire'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-NJ', f: 'New Jersey'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-NM', f: 'New Mexico'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-NY', f: 'New York'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-NC', f: 'North Carolina'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-ND', f: 'North Dakota'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-OH', f: 'Ohio'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-OK', f: 'Oklahoma'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-OR', f: 'Oregon'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-PA', f: 'Pennsylvania'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-RI', f: 'Rhode Island'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-SC', f: 'South Carolina'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>No Statute/Case Law</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>No Statute/Case Law</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>No Statute/Case Law</td></tr></table> '],
+[{v:'US-SD', f: 'South Dakota'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-TN', f: 'Tennessee'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-TX', f: 'Texas'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-UT', f: 'Utah'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>No Statute/Case Law</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>No Statute/Case Law</td></tr></table> '],
+[{v:'US-VT', f: 'Vermont'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-VA', f: 'Virginia'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-WA', f: 'Washington'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-WV', f: 'West Virginia'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>No Statute/Case Law</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>No Statute/Case Law</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-WI', f: 'Wisconsin'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-WY', f: 'Wyoming'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>No Statute/Case Law</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>No Statute/Case Law</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>No Statute/Case Law</td></tr></table> '],
+[{v:'US-DC', f: 'District of Columbia'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+
+
+
+      ]);
+
+      var strikeOptions = {
+        displayMode: 'regions',
+        resolution:'provinces',
+        width:'500',
+        colorAxis:{
+          colors:['#599b59','#ffffb3','#aa5555'],
+          minValue: 0,
+          maxValue:2},
+       region:'US',
+       tooltip: {isHtml: true},
+       legend:'none'
+      };
+
+var collectiveData = new google.visualization.DataTable();
+        collectiveData.addColumn('string', 'State');
+        collectiveData.addColumn('number', 'Status');
+        collectiveData.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
+      collectiveData.addRows([
+[{v:'US-AL', f: 'Alabama'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>No Statute or Case Law</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>No Statute or Case Law</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-AK', f: 'Alaska'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-AZ', f: 'Arizona'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>No Statute or Case Law</td></tr></table> '],
+[{v:'US-AR', f: 'Arkansas'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-CA', f: 'California'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-CO', f: 'Colorado'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>No Statute or Case Law</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-CT', f: 'Connecticut'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-DE', f: 'Delaware'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-FL', f: 'Florida'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-GA', f: 'Georgia'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-HI', f: 'Hawaii'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-ID', f: 'Idaho'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-IL', f: 'Illinois'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-IN', f: 'Indiana'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-IA', f: 'Iowa'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-KS', f: 'Kansas'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-KY', f: 'Kentucky'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-LA', f: 'Louisiana'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-ME', f: 'Maine'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-MD', f: 'Maryland'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-MA', f: 'Massachussetts'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-MI', f: 'Michigan'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-MN', f: 'Minnesota'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-MS', f: 'Mississippi'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>No Statute or Case Law</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>No Statute or Case Law</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-MO', f: 'Missouri'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-MT', f: 'Montana'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-NE', f: 'Nebraska'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-NV', f: 'Nevada'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-NH', f: 'New Hampshire'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-NJ', f: 'New Jersey'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-NM', f: 'New Mexico'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-NY', f: 'New York'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-NC', f: 'North Carolina'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-ND', f: 'North Dakota'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-OH', f: 'Ohio'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-OK', f: 'Oklahoma'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-OR', f: 'Oregon'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-PA', f: 'Pennsylvania'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-RI', f: 'Rhode Island'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-SC', f: 'South Carolina'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-SD', f: 'South Dakota'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-TN', f: 'Tennessee'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-TX', f: 'Texas'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-UT', f: 'Utah'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-VT', f: 'Vermont'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-VA', f: 'Virginia'},2, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Illegal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Illegal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Illegal</td></tr></table> '],
+[{v:'US-WA', f: 'Washington'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-WV', f: 'West Virginia'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-WI', f: 'Wisconsin'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-WY', f: 'Wyoming'},1, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>No Statute or Case Law</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+[{v:'US-DC', f: 'District of Columbia'},0, '<table><tr><td class=\'group\'>Firefighters</td><td class=\'law\'>Legal</td></tr><tr><td class=\'group\'> Police</td><td class=\'law\'>Legal</td><td></tr><tr><td class=\'group\'> Teachers</td><td class=\'law\'>Legal</td></tr></table> '],
+
+
+      ]);
+
+      var collectiveOptions = {
+        displayMode: 'regions',
+        resolution:'provinces',
+        width:'500',
+        colorAxis:{
+          colors:['#599b59','#ffffb3','#aa5555'],
+          minValue: 0,
+          maxValue:2},
+       region:'US',
+       tooltip: {isHtml: true},
+       legend:'none'
+      };
+
+
+      var aeiChart = new google.visualization.GeoChart(document.getElementById('aei_chart'));
+      var wageChart = new google.visualization.GeoChart(document.getElementById('wage_chart'));
+      var collectiveChart = new google.visualization.GeoChart(document.getElementById('collective_chart'));
+      var strikeChart = new google.visualization.GeoChart(document.getElementById('strike_chart'));
+     aeiChart.draw(aeiData, aeiOptions);
+     wageChart.draw(wageData, wageOptions);
+     collectiveChart.draw(collectiveData, collectiveOptions);
+     strikeChart.draw(strikeData, strikeOptions);
+
+  }
+</script>
+</head>
+<body>
+<p><strong>"Public workers are overpaid."</strong></p>
+<p>Most public servants have heard this at some point, whether from an opinionated relative or a high-profile politician. Mitt Romney had this to say in the 2011 New Hampshire <a href="https://www.washingtonpost.com/blogs/election-2012/post/new-hampshire-debate-meet-the-press--facebook-debate-transcript/2012/01/08/gIQAqYMDjP_blog.html">Republican presidential debate</a> (emphasis added):</p>
+<p style ="margin-top:15px;margin-left:40px;margin-bottom:15px">“If we’re going to finally pull back the extraordinary political power government unions are exerting in this country, we’re going to have to say that people who work for the government, government workers, should have their compensation tied to that which exists in the private sector. <strong>People who are government servants, public servants, should not be paid more than the taxpayers who are paying for it.”</strong></p>
+<p>Unfortunately for Romney, there is no evidence to support the claim that public-sector employees are being paid more than their private-sector counterparts. It’s not hard to find examples of staggeringly high pay in the public sector – 347 state employees in my home state of Texas <a href="http://www.thefiscaltimes.com/Articles/2011/07/13/10-Insanely-Overpaid-Public-Employees">earned more than President Obama in 2009</a> – but is the average mid-level public servant out-earning her private-sector counterpart at the taxpayers’ expense? This discussion will be limited to employees at the state and local level.</p></br>
+<p>It’s possible to argue that the data supports Romney’s point of view, <em>if</em> you’re willing to disregard the educational backgrounds of public- and private-sector employees. According to the Economic Policy Institute, <a href="http://www.epi.org/files/page/-/Facts_Public_employees.pdf">about 54% of public servants at the state and local level have a college degree</a>, compared to 35% in the private sector. Consequently, to compare the total value of compensation – wages and benefits – of each sector without controlling for educational attainment is to ignore a critical piece of how earnings are determined.
+</p></br>
+<p>How does California measure up? According to a 2010 brief from the Center on Wage and Employment Dynamics here at UC Berkeley, state and local workers in the Golden State aren’t overpaid. California public employee wages are <a href="http://www.irle.berkeley.edu/cwed/wp/2010-03.pdf">7% lower</a>, on average, than those of comparable private sector workers. When considering wages and benefits for similar workers, Allegretto and Keefe found “no significant difference” between compensation costs in the California public and private sectors. Public employers in California contribute a higher share of compensation expenses to benefits than private employers, but public employees end up with “considerably less supplemental pay and vacation time.”
+</p></br>
+<p>California is, of course, above average when it comes to public sector compensation. The Economic Policy Institute <a href="http://www.epi.org/files/page/-/Facts_Public_employees.pdf">concludes</a> that, when comparing employees with similar education and other characteristics, state and local workers across the country are underpaid relative to workers in the private sector. Estimates of the gap between public- and private-sector compensation vary, but a 2010 study found that total compensation for state workers in the U.S. was, on average, 6.8% lower than compensation for comparable private-sector workers. Public workers at the local level, meanwhile, were be 7.4% less than their private-sector counterparts.</p></br>
+<p>To examine a more conservative assessment of compensation differentials, I used estimates from a <a href="https://www.aei.org/wp-content/uploads/2014/04/-biggs-overpaid-or-underpaid-a-statebystate-ranking-of-public-employee-compensation_112536583046.pdf">2014 American Enterprise Institute report</a>. The authors of this report used wages, benefits, job security, and working conditions to rank states, but exclude public safety employees from their analysis. Note that only the dark red areas indicate states deemed to have a public-sector compensation penalty; white states indicate a match or near-match with market compensation, and green states are considered to have above-market public employee compensation. Unfortunately, Wyoming was not included in the authors’ table of compensation categories, so I was unable to include it in this map.</p></br>
+<p><strong><center>AEI: Public Sector Compensation by State</center></strong></p>
+<center><div id="aei_chart"></div></center>
+<p>AEI’s compensation rankings should be taken with a grain of salt. First of all, their data excludes public employees in public safety roles, such as police and firefighters, which make up a large portion of the total public workforce. It’s also worth noting that their analysis includes valuations of certain intangibles such as job security and retirement benefits. As older workers retire and so-called millennials begin to make up a larger share of the public-sector workforce, job security and retirement benefits may be of less importance to younger workers. A measure of compensation that includes these factors may not be as relevant to workers who change jobs with more frequency, so I compiled rounded wage differential numbers from the same report to take a look at just the wage gap between public and private employees:
+</p></br>
+<p><strong><center>AEI: Wage Differentials by State</center></strong></p>
+<center><div id="wage_chart"></div></center>
+<p>It’s clear that public sector employees in most states receive lower wages than their private-sector counterparts, and that there’s plenty of room for debate around the value of benefit packages and less-tangible measures of job value. The Economic Policy Institute’s finding that public-sector employees are undercompensated is supported by three different studies on the subject, each of which accounted for education and other worker characteristics to arrive at the same conclusion.
+</p></br>
+<p><strong>“Public-sector unions have too much power.”</strong></p></br>
+<p>Private-sector employees have, since the passage of the Wagner Act in 1935, had the right to unionize, bargain, and strike. Federal employees gained unionization and bargaining (but not striking) rights in 1978.</p></br>
+<p>What about state and local government employees? Regulations vary both by state and by occupation. According to a 2014 report from the Center for Economic and Policy Research (CEPR), nearly half of all unionized public-sector workers across the country are firefighters, police, and teachers. Sanes and Schmitt examined the legality of public-sector collective bargaining for these professions across all 50 states and the District of Columbia, sorting into three categories: states where collective bargaining is illegal, states where it is legal, and states where no statute or case law exists. I’ve applied these categorizations to the following map; green indicates a state where collective bargaining is legal for all three occupations, and red indicates that collective bargaining is illegal for all three. Yellow states indicate a more complicated situation; hover your mouse over those to view the legal status of collective bargaining for each occupation. Remember, collective bargaining can still be severely constrained even in states where it remains legal; more on this later.</p></br>
+<p><strong><center>CEPR: Collective Bargaining Rights by State</center></strong></p>
+<center><div id="collective_chart"></div></center>
+<p>In 1960, just 2% of the public-sector workers at the state/local level had the right to collective bargaining. As of 2010, <a href="http://www.epi.org/publication/laws-enabling-public-sector-collective-bargaining-have-not-led-to-excessive-public-sector-pay/">63%</a> of the public-sector workforce had that right.</p></br>
+<p>I’ve put together a similar map to illustrate the CEPR’s compilation of the right to strike for these professions in each state. The right to strike is treated differently, as states tend to prioritize public safety. However, there is still some variation; Ohio and Hawaii permit strikes by all three, and many states allow teachers to strike. Striking rights have now been extended to around <a href="http://www.epi.org/publication/laws-enabling-public-sector-collective-bargaining-have-not-led-to-excessive-public-sector-pay/">20% of public employees in non-public safety positions.</a></p></br>
+<p><strong><center>CEPR: Right to Strike by State</center></strong></p>
+<center><div id="strike_chart"></div></center>
+<p>How do rights associated with unionization affect worker compensation? Keefe finds that “employees covered by the right to strike earn about <a href="http://www.epi.org/publication/laws-enabling-public-sector-collective-bargaining-have-not-led-to-excessive-public-sector-pay/">2 percent to 5 percent more</a> than those without it.” Keefe’s 2015 paper on public-sector collective bargaining argues that collective bargaining and the right to strike have led to neither public safety crises nor excessive compensation; <a href="http://www.epi.org/publication/laws-enabling-public-sector-collective-bargaining-have-not-led-to-excessive-public-sector-pay/">his work</a> also examines the effects of binding interest arbitration, mediation, fact-finding, and agency-shop provisions.</p></br>
+<p>The incidence of public-sector unionization (in states where organization is permitted) may have something to do with monopsony power, the model in which a sector of the market is dominated by one employers. California’s high public employee unionization rates are consistent with public employee unionization rates in a study of 27 developed countries, which found that, <a href="http://www.irle.berkeley.edu/cwed/wp/2010-03.pdf">just like in California</a>, “union density is negatively correlated with education in the private sector and positively correlated in the public sector.” The prevalence of union participation for U.S. public-sector workers has led to <a href="http://www.epi.org/publication/public_sector_workers_earn_less/">“a floor on earnings for some lesser-skilled workers</a>, while the earnings floor for those workers has collapsed in the private sector.” So even though average compensation for public-sector employees still lags behind the private sector, unionization of this sector has improved wage conditions for an economically vulnerable portion of the workforce.
+</p></br>
+<p>The difference in compensation between states that allow public-sector unionization and “right-to-work” states is clear: “While <a href="https://www.epi.org/press/public-sector-employees-in-states-with-full-collective-bargaining-rights-earn-more-than-their-counterparts-in-right-to-work-states/">public-sector employees in right-to-work states suffer a 10 percent public-sector pay penalty</a>, their counterparts in non-right-to-work states suffer only a 1 percent penalty.”</p></br>
+<p>Ironically, one of the most notorious attempts to restrict the bargaining rights of public employees in recent years has come from the first state to grant union rights to that workforce: Wisconsin. In 1959, twenty-four years after the Wagner Act, Wisconsin Governor Gaylord Nelson signed a law that granted similar rights to public sector unions. In March 2011, Scott Walker and the Wisconsin Legislature stripped many of those rights away, depriving child care workers and university faculty/staff of bargaining collectively, and severely limiting the bargaining ability of most public employees. Governor John Kasich of Ohio signed a similar bill into law that same month, and other states followed suit. Though Wisconsin played a key role in expanding labor rights to the public sector, it’s also been at the forefront of a larger effort to reverse those gains across the country.</p></br>
+<p>Public employee unions do have the power to address the wage gap between public- and private-sector compensation, but unionization has not resulted in exorbitant wages or threats to public safety. Rather, unsubstantiated fears about the power of these unions has led a contemporary push to limit the collective bargaining rights of public employees.</p></br>
+</body>
+</html>
